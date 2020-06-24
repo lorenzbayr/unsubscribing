@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { SubjectComponent } from './subject/subject.component';
 import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
+import { CancelComponent } from './cancel/cancel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SubscriptionComponent,
     SubjectComponent,
-    AsyncPipeComponent
+    AsyncPipeComponent,
+    CancelComponent
   ],
   imports: [
     BrowserModule,

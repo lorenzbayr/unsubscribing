@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import {interval} from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-async-pipe',
@@ -8,6 +9,9 @@ import {interval} from 'rxjs';
 })
 export class AsyncPipeComponent {
 
-  stream$ = interval(500);
+  stream$ = interval(500)
+    .pipe(
+      tap(console.log)
+    );
 
 }

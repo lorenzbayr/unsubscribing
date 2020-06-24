@@ -1,7 +1,12 @@
 
-<button class="btn btn-primary" routerLink="subscription">Subscription</button>
-<button class="btn btn-primary" routerLink="subject">Subject</button>
-<button class="btn btn-primary" routerLink="async-pipe">Async Pipe</button>
+<div class="mt-4 ml-3">
+  <button class="btn btn-primary mr-3" routerLink="subscription">Subscription</button>
+  <button class="btn btn-primary mr-3" routerLink="subject">Subject</button>
+  <button class="btn btn-primary mr-3" routerLink="async-pipe">Async Pipe</button>
+  <button class="btn btn-danger" routerLink="cancel">Cancel</button>
 
+  <h1 class="mt-3">
+    <router-outlet></router-outlet>
+  </h1>
 
-<router-outlet></router-outlet>
+</div>

@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {interval, Subscription} from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-subscription',
@@ -15,9 +16,12 @@ export class SubscriptionComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscription = interval(500)
+      .pipe(
+        tap(console.log)
+      )
       .subscribe({
         next: value => this.number = value,
-        error: err => console.log(err),
+        error: err => { },
         complete: () => console.log('Stream beendet')
       });
   }

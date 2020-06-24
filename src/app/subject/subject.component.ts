@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {interval, Subject} from 'rxjs';
-import {takeUntil} from 'rxjs/operators';
+import {takeUntil, tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-subject',
@@ -17,11 +17,12 @@ export class SubjectComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     interval(500)
       .pipe(
+        tap(console.log),
         takeUntil(this.ngUnsubscribe)
       )
       .subscribe({
         next: value => this.number = value,
-        error: err => console.log(err),
+        error: err => { },
         complete: () => console.log('Stream beendet')
       });
   }
